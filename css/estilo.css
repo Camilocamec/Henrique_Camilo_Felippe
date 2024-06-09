@@ -1,0 +1,135 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* Reseta o padding e margin para todos os elementos para garantir um estilo consistente */
+* {
+    padding: 0px; /* Remove o padding padrão de todos os elementos */
+    margin: 0px; /* Remove o margin padrão de todos os elementos */
+    box-sizing: border-box; /* Inclui padding e border na largura e altura total dos elementos */
+}
+
+/* Estiliza o elemento header, que geralmente é usado para o cabeçalho da página */
+header {
+    display: flex; /* Utiliza flexbox para layout */
+    justify-content: space-between; /* Distribui espaço entre os itens filhos, alocando espaço máximo disponível entre eles */
+    align-items: center; /* Alinha os itens verticalmente no centro */
+    padding: 10px; /* Adiciona 10px de padding interno ao redor do conteúdo do header */
+    background-color: black; /* Define a cor de fundo como preta */
+    border-bottom: 2px solid black; /* Cria uma borda inferior preta de 2px */
+}
+
+/* Estiliza o logo dentro do header */
+header .logo {
+    font-size: 26px; /* Define o tamanho da fonte do logo */
+    color: black; /* Define a cor do texto do logo como preta */
+    font-weight: bold; /* Define a espessura da fonte como negrito */
+}
+
+/* Configurações para listas, itens de lista e links dentro do header para garantir que os links sejam exibidos como elementos de bloco */
+header ul, li, a {
+    display: flex; /* Exibe os itens como elementos de flexbox */
+    gap: 20px; /* Define um espaço de 20px entre os itens flexíveis */
+    text-decoration: none; /* Remove a decoração de texto (linha de sublinhado) dos links */
+}
+
+/* Estiliza os links dentro do header */
+header a {
+    color: white; /* Define a cor do texto dos links como branca */
+    font-size: 15px; /* Define o tamanho da fonte dos links */
+    transition: color 0.5s; /* Define uma transição suave para a mudança de cor */
+}
+
+/* Define a cor dos links quando o mouse passa sobre eles */
+header a:hover {
+    color: green; /* Muda a cor do texto para um verde específico ao passar o mouse */
+}
+
+/* Estiliza os títulos h3 */
+h3 {
+    padding: 20px; /* Adiciona 20px de padding ao redor do conteúdo do h3 */
+    text-align: center; /* Centraliza o texto */
+    font-size: 30px; /* Define o tamanho da fonte */
+    color: black; /* Define a cor do texto como preta */
+}
+
+/* Estiliza a seção principal da página */
+section {
+    display: flex; /* Utiliza flexbox para layout */
+    flex-wrap: wrap;  /* Permite que os itens em flexbox quebrem para a próxima linha */
+    justify-content: flex-start; /* Alinha os itens no início do container */
+    padding: 20px; /* Adiciona padding interno ao redor do conteúdo da seção */
+    width: 80%; /* Define a largura da seção como 80% do contêiner pai */
+    margin: 0 auto; /* Centraliza a seção horizontalmente */
+}
+
+/* Estiliza os artigos dentro da seção */
+article {
+    flex-grow: 1; /* Permite que o artigo cresça para ocupar espaço adicional */
+    padding: 20px; /* Adiciona padding interno ao redor do conteúdo do artigo */
+    width: 270px; /* Define a largura do artigo */
+    max-width: 600px; /* Define a largura máxima do artigo */
+}
+
+/* Estiliza as imagens para garantir que elas se ajustem corretamente no layout */
+img {
+    width: 100%; /* Define a largura da imagem como 100% do seu contêiner */
+    height: auto; /* Mantém a proporção da altura da imagem */
+    max-width: 600px; /* Define a largura máxima da imagem */
+}
+
+/* Estiliza os parágrafos */
+p {
+    color: gray; /* Define a cor do texto do parágrafo como cinza */
+    font-weight: bold; /* Define a espessura da fonte como negrito */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* Estilos para responsividade em telas com largura máxima de 600px */
+@media (max-width: 600px) {
+    header .logo {
+    font-size: 42px; /* Aumenta o tamanho da fonte do logo para telas pequenas */
+    grid-template-columns: auto 1fr; /*Define duas colunas no grid*/ 
+    align-items: center; /*Alinha os itens do header ao centro verticalmente*/
+    height: auto; /*Ajusta a altura do header automaticamente*/ 
+    }
+
+    header ul, li, a {
+    display: block; /* Exibe cada item como bloco para melhorar a usabilidade em dispositivos móveis */
+    font-size: 36px; /* Aumenta o tamanho da fonte para os itens do menu */
+    gap: 3px; /* Define um espaço menor entre os itens */
+    }
+
+    header a {
+    font-size: 45px; /* Aumenta o tamanho da fonte dos links */
+    margin-left: 40px; /* Ajusta a margem esquerda dos links */
+    }
+
+    header nav a {
+    margin-left: 0px; /* Reduz a margem esquerda dos links de navegação */
+    font-size: 20px; /* Define o tamanho da fonte para os links de navegação */
+    }
+
+    header nav li {
+    background-color: gray; /* Define a cor de fundo dos itens de navegação */
+    width: 100%; /* Faz com que cada item ocupe 100% da largura disponível */
+    }
+
+    nav {
+    justify-self: end;/* Faz com que cada item ocupe 100% da largura disponível */
+    }
+
+    nav ul {
+    display: flex; /*Define o layout da lista no nav como flexbox */
+    flex-direction: column; /* Organiza os itens de navegação em uma coluna */
+    align-items: flex-start; /* Alinha o nav ao final do container principal*/
+    }
+    
+    article {
+    max-width: 100%; /* Permite que os artigos ocupem toda a largura disponível */
+    }
+    
+    section {
+    width: 90%; /* Aumenta a largura da seção para 90% do contêiner pai */
+    }
+    }
+
